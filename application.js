@@ -23,7 +23,7 @@ function loadInstagrams(photos) {
             for(i=0;i<photos.data.length;i++){
                 var img = photos.data[i].images.low_resolution.url;
                 var link = photos.data[i].link;
-                $('ul').append("<li class='fade-in'><a href='"+link+"'><img src='"+img+"'></a></li>");
+                $('ul').append("<li><a href='"+link+"'><img src='"+img+"'></a></li>");
                 $('.paginate a').attr('data-max-tag-id', photos.pagination.next_max_id).fadeIn();
             }
         });
