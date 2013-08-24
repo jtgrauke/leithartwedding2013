@@ -1,0 +1,54 @@
+body {
+    font-family: helvetica;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #ff4566;
+}
+
+
+.header, .paginate {
+    text-align: center;
+}
+
+.container {
+    width: 84%;
+    margin: 5% auto;
+}
+
+ul.feed {
+    width: 100%;
+}
+
+ul.feed li {
+    width: 23.3%;
+    float: left;
+    margin: 5%;
+}
+
+ul.feed li a img {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+    display: block;
+}
+
+.paginate {
+    display: inline-block;
+    width: 100%;
+    clear: both;
+}
+
+.view-more {
+    padding: 10px 15px;
+    border-radius: 3px;
+    background: #aaa;
+    color: #fff;
+    display: none;
+}
+
+.view-more:active {
+    background: #999;
+}

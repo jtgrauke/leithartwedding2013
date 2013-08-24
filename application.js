@@ -31,7 +31,7 @@ function loadInstagrams(photos) {
 }
 
 function showMore(){
-    $('body').on('click', '.paginate a.btn', function(){
+    $('body').on('click', '.paginate a.view-more', function(){
         loadInstagrams();
         return false;
     });
