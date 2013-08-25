@@ -14,7 +14,7 @@ a {
 }
 
 .container {
-    width: 84%;
+    width: 95%;
     margin: 5% auto;
 }
 
@@ -30,15 +30,19 @@ ul.feed li {
 
 ul.feed li a img {
     width: 100%;
-    max-width: 220px;
+    max-width: 612px;
     margin: 0 auto;
-    display: block;
+    display: none;
 }
 
 .paginate {
     display: inline-block;
     width: 100%;
     clear: both;
+}
+
+.is-loading {
+    background: #eee;
 }
 
 .view-more {
