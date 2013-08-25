@@ -36,9 +36,10 @@ function loadInstagrams(max_id) {
         url: url,
         data: {'client_id': config.clientID, 'max_tag_id': max},
         dataType: "jsonp",
-        beforeSend: function(){$('.feed li a img').fadeIn();},
-        complete: function(){$('.feed li a img').fadeIn(1000);}
-    }).done(function(data){
+        complete: function(){
+            $('.feed li a img').fadeIn(1000);
+        }
+    }).success(function(data){
         console.log(data);
         for(i=0;i<data.data.length;i++){
             var img = data.data[i].images.standard_resolution.url;

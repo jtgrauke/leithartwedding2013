@@ -41,10 +41,6 @@ ul.feed li a img {
     clear: both;
 }
 
-.is-loading {
-    background: #eee;
-}
-
 .view-more {
     padding: 10px 15px;
     border-radius: 3px;
