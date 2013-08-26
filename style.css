@@ -1,5 +1,5 @@
 body {
-    font-family: helvetica;
+    font-family: georgia;
     font-size: 12px;
 }
 
@@ -13,9 +13,14 @@ a {
     text-align: center;
 }
 
+.header .title {
+    margin-bottom: 5%;
+}
+
 .container {
-    width: 95%;
-    margin: 5% auto;
+    width: 100%;
+    max-width: 960px;
+    margin: 4% auto;
 }
 
 ul.feed {
@@ -23,32 +28,32 @@ ul.feed {
 }
 
 ul.feed li {
-    width: 23.3%;
+    width: 23%;
     float: left;
-    margin: 5%;
+    margin: 1%;
 }
 
 ul.feed li a img {
     width: 100%;
-    max-width: 612px;
+    max-width: 302px;
     margin: 0 auto;
     display: none;
 }
 
 .paginate {
-    display: inline-block;
-    width: 100%;
+    display: none;
     clear: both;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 5%;
+    background: #aaa;
+    cursor: pointer;
+}
+
+.paginate:active {
+    background: #999;
 }
 
 .view-more {
-    padding: 10px 15px;
-    border-radius: 3px;
-    background: #aaa;
     color: #fff;
-    display: none;
-}
-
-.view-more:active {
-    background: #999;
 }

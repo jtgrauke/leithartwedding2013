@@ -9,12 +9,12 @@ Instagram.Config = {
 
 var config = Instagram.Config;
 var max = '';
-
+var tag = 'leithartwedding2013';
 
 
 
 function generateURL(){
-  var tag = 'leithartwedding2013';
+
   url = config.apiHost + "/v1/tags/" + tag + "/media/recent?callback=?&client_id=" + config.clientID;
 
   return function(max_id) {
@@ -42,11 +42,11 @@ function loadInstagrams(max_id) {
     }).success(function(data){
         console.log(data);
         for(i=0;i<data.data.length;i++){
-            var img = data.data[i].images.standard_resolution.url;
+            var img = data.data[i].images.low_resolution.url;
             var link = data.data[i].link;
             var photo = "<li><a target='_blank' href='"+link+"'><img src='"+img+"'></a></li>";
             $('ul').append(photo);
-            $('.paginate a').attr('data-max-tag-id', data.pagination.next_max_id).fadeIn();
+            $('.paginate').attr('data-max-tag-id', data.pagination.next_max_id).css('display', 'inline-block');
         }
 
         max = data.pagination.next_max_tag_id;
@@ -56,7 +56,7 @@ function loadInstagrams(max_id) {
 
 function showMore(){
 
-    $('body').on('click', '.paginate a.view-more', function(e) {
+    $('body').on('click', '.paginate', function(e) {
         e.preventDefault();
         loadInstagrams();
     });
