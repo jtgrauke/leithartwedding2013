@@ -8,33 +8,16 @@ Instagram.Config = {
 };
 
 var config = Instagram.Config;
-var max = '';
+var min = '';
 var tag = 'leithartwedding2013';
 
 
-
-function generateURL(){
-
-  url = config.apiHost + "/v1/tags/" + tag + "/media/recent?callback=?&client_id=" + config.clientID;
-
-  return function(max_id) {
-
-    if(typeof max_id === 'string' && max_id.trim() !== '') {
-      url += "&max_tag_id=" + max_id;
-    }
-    return url;
-  };
-
-} generateURL();
-
-
-
-function loadInstagrams(max_id) {
+function loadInstagrams(min_id) {
 
     $.ajax({
         type: "GET",
-        url: url,
-        data: {'client_id': config.clientID, 'max_tag_id': max},
+        url: config.apiHost + "/v1/tags/" + tag + "/media/recent?callback=?",
+        data: {'client_id': config.clientID, 'max_tag_id': min},
         dataType: "jsonp",
         complete: function(){
             $('.feed li a img').fadeIn(1000);
@@ -49,16 +32,7 @@ function loadInstagrams(max_id) {
             $('.paginate').attr('data-max-tag-id', data.pagination.next_max_id).css('display', 'inline-block');
         }
 
-        max = data.pagination.next_max_tag_id;
-    });
-}
-
-
-function showMore(){
-
-    $('body').on('click', '.paginate', function(e) {
-        e.preventDefault();
-        loadInstagrams();
+        min = data.pagination.next_max_tag_id;
     });
 }
 
@@ -66,7 +40,11 @@ function showMore(){
 $(document).ready(function(){
 
     loadInstagrams();
-    showMore();
+
+    $('body').on('click', '.paginate', function(e) {
+        e.preventDefault();
+        loadInstagrams();
+    });
 
 });
 
