@@ -1,7 +1,7 @@
 body {
     font-family: helvetica;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 a {
@@ -18,21 +18,36 @@ a {
     margin-bottom: 5%;
 }
 
-.header .title {
-    padding: 2%;
+.header-box {
+    padding: 20px;
     border: 2px solid #222;
     display: inline-block;
+    margin-left: -5px;
+    cursor: pointer;
+    -webkit-transition: background, color .25s ease;
+       -moz-transition: background, color .25s ease;
+        -ms-transition: background, color .25s ease;
+         -o-transition: background, color .25s ease;
+            transition: background, color .25s ease;
 }
 
-.share-buttons {
-    display: block !important;
-    margin: 5% -20px 0 0;
+.header-box:hover, .view-toggle {
+    background: #222;
+    color: #fff;
 }
 
-.fb-like {
-    padding-right: 5px;
+.title {
+    cursor: default;
 }
 
+.title:hover {
+    background: #fff;
+    color: #222;
+}
+
+.header-box.mid {
+    border-right: 0;
+}
 .container {
     width: 960px;
     margin: 4% auto;
@@ -43,15 +58,25 @@ ul.feed {
 }
 
 ul.feed li {
-    width: 23%;
+    width: 31.3%;
     float: left;
     margin: 1%;
     position: relative;
 }
 
+ul.feed li.two {
+    width: 48%;
+}
+
+.two a .overlay {
+    width: 460px;
+    height: 460px;
+}
+
 ul.feed li a img {
     width: 100%;
-    max-width: 302px;
+    max-width: 460px;
+    height: auto;
     margin: 0 auto;
     display: none;
 }
@@ -66,12 +91,11 @@ ul.feed li a img {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255,255,255,0.65);
-    width: 217px;
-    height: 217px;
+    background: rgba(0,0,0,0.65);
+    width: 300px;
+    height: 300px;
     text-align: center;
     display: table;
-    border: 2px solid #222;
 }
 
 .overlay:hover {
@@ -87,7 +111,7 @@ ul.feed li a img {
 }
 
 .likes {
-    color: #333;
+    color: #fff;
 }
 
 .likes i.icon-heart {
