@@ -1,6 +1,7 @@
 body {
-    font-family: georgia;
-    font-size: 12px;
+    font-family: helvetica;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 a {
@@ -13,13 +14,27 @@ a {
     text-align: center;
 }
 
-.header .title {
+.header {
     margin-bottom: 5%;
 }
 
+.header .title {
+    padding: 2%;
+    border: 2px solid #222;
+    display: inline-block;
+}
+
+.share-buttons {
+    display: block !important;
+    margin: 5% -20px 0 0;
+}
+
+.fb-like {
+    padding-right: 5px;
+}
+
 .container {
-    width: 100%;
-    max-width: 960px;
+    width: 960px;
     margin: 4% auto;
 }
 
@@ -31,6 +46,7 @@ ul.feed li {
     width: 23%;
     float: left;
     margin: 1%;
+    position: relative;
 }
 
 ul.feed li a img {
@@ -40,18 +56,56 @@ ul.feed li a img {
     display: none;
 }
 
+.overlay {
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.65);
+    width: 217px;
+    height: 217px;
+    text-align: center;
+    display: table;
+    border: 2px solid #222;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.overlay-inner {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.likes {
+    color: #333;
+}
+
+.likes i.icon-heart {
+    padding-right: 5px;
+}
+
 .paginate {
     display: none;
     clear: both;
     width: 100%;
     padding: 20px 0;
     margin-top: 5%;
-    background: #aaa;
+    background: #333;
     cursor: pointer;
 }
 
 .paginate:active {
-    background: #999;
+    background: #222;
 }
 
 .view-more {
