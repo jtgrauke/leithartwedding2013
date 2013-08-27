@@ -9,52 +9,44 @@ a {
     color: #ff4566;
 }
 
-
-.header, .paginate {
-    text-align: center;
-}
-
 .header {
-    margin-bottom: 5%;
-}
-
-.header-box {
-    padding: 20px;
+    width: 230px;
+    margin: 0 auto;
     border: 2px solid #222;
-    display: inline-block;
-    margin-left: -5px;
-    cursor: pointer;
-    -webkit-transition: background, color .25s ease;
-       -moz-transition: background, color .25s ease;
-        -ms-transition: background, color .25s ease;
-         -o-transition: background, color .25s ease;
-            transition: background, color .25s ease;
+    position: relative;
 }
 
-.header-box:hover, .view-toggle {
+.view-toggle {
+    position: absolute;
+    right: 0;
+    padding-left: 22px;
+    width: 10px;
+    display: inline-block;
+    padding: 18px 20px;
+    cursor: pointer;
     background: #222;
     color: #fff;
 }
 
 .title {
-    cursor: default;
+    display: inline-block;
+    padding: 18px;
 }
 
-.title:hover {
-    background: #fff;
-    color: #222;
-}
-
-.header-box.mid {
-    border-right: 0;
-}
 .container {
     width: 960px;
     margin: 4% auto;
 }
 
+.loading {
+    background: url(loading.gif) 50% no-repeat;
+    background-size: 100%;
+}
+
 ul.feed {
     width: 100%;
+    margin: 5% 0;
+    overflow: hidden;
 }
 
 ul.feed li {
@@ -110,7 +102,7 @@ ul.feed li a img {
     vertical-align: middle;
 }
 
-.likes {
+.likes, .view-more {
     color: #fff;
 }
 
@@ -119,6 +111,7 @@ ul.feed li a img {
 }
 
 .paginate {
+    text-align: center;
     display: none;
     clear: both;
     width: 100%;
@@ -130,8 +123,4 @@ ul.feed li a img {
 
 .paginate:active {
     background: #222;
-}
-
-.view-more {
-    color: #fff;
 }

@@ -15,8 +15,10 @@ function loadInstagrams() {
         dataType: "jsonp",
         beforeSend: function() {
             $('.header').hide();
+            $('ul.feed li').addClass('loading');
         },
         complete: function(){
+            $('ul.feed li').removeClass('loading');
             $('.header').fadeIn(1000);
             $('.feed li a img').fadeIn(1000);
         }
@@ -26,6 +28,7 @@ function loadInstagrams() {
             var img = photos.data[i].images.standard_resolution.url;
             var link = photos.data[i].link;
             var likes = photos.data[i].likes.count;
+            var id = photos.data[i].id;
             var photo_content = "<a target='_blank' href='"+link+"'><img src='"+img+"'><span class='overlay'><span class='overlay-inner'><h3 class='likes'><i class='icon-heart'></i>"+likes+"</h3></span></span></a>";
             if ($('.feed li').hasClass('two')) {
                 var photo = "<li class='two'>"+photo_content+"</li>";
@@ -35,7 +38,12 @@ function loadInstagrams() {
             $('ul').append(photo);
             $('.paginate').css('display', 'inline-block');
         }
-        min = photos.pagination.next_max_tag_id;
+        if (id === "521245327278927357_255379794") {
+            min = '';
+            $('.paginate').hide();
+        } else {
+            min = photos.pagination.next_max_tag_id;
+        }
     });
 
     event.preventDefault();
