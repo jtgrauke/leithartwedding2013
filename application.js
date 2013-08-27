@@ -26,13 +26,16 @@ function loadInstagrams() {
             var img = photos.data[i].images.standard_resolution.url;
             var link = photos.data[i].link;
             var likes = photos.data[i].likes.count;
-            var photo = "<li><a target='_blank' href='"+link+"'><img src='"+img+"'><span class='overlay'><span class='overlay-inner'><h3 class='likes'><i class='icon-heart'></i>"+likes+"</h3></span></span></a></li>";
+            var photo_content = "<a target='_blank' href='"+link+"'><img src='"+img+"'><span class='overlay'><span class='overlay-inner'><h3 class='likes'><i class='icon-heart'></i>"+likes+"</h3></span></span></a>";
+            if ($('.feed li').hasClass('two')) {
+                var photo = "<li class='two'>"+photo_content+"</li>";
+            } else {
+                var photo = "<li>"+photo_content+"</li>";
+            }
             $('ul').append(photo);
             $('.paginate').css('display', 'inline-block');
         }
-
         min = photos.pagination.next_max_tag_id;
-
     });
 
     event.preventDefault();
@@ -41,9 +44,13 @@ function loadInstagrams() {
 
 function changeView() {
 
-    $('ul.feed li').toggleClass('two');
-    $('.view-toggle i').toggleClass('icon-th-large');
-    $('.view-toggle i').toggleClass('icon-th');
+    if ($('ul.feed li').hasClass('two')) {
+        $('ul.feed li').removeClass('two');
+    } else {
+        $('ul.feed li').addClass('two');
+    }
+
+    $('.view-toggle i').toggleClass('icon-th-large icon-th');
 }
 
 $(document).ready(function(){
