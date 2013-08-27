@@ -15,10 +15,8 @@ function loadInstagrams() {
         dataType: "jsonp",
         beforeSend: function() {
             $('.header').hide();
-            $('ul.feed li').addClass('loading');
         },
         complete: function(){
-            $('ul.feed li').removeClass('loading');
             $('.header').fadeIn(1000);
             $('.feed li a img').fadeIn(1000);
         }

@@ -38,11 +38,6 @@ a {
     margin: 4% auto;
 }
 
-.loading {
-    background: url(loading.gif) 50% no-repeat;
-    background-size: 100%;
-}
-
 ul.feed {
     width: 100%;
     margin: 5% 0;
@@ -54,6 +49,7 @@ ul.feed li {
     float: left;
     margin: 1%;
     position: relative;
+    overflow: hidden;
 }
 
 ul.feed li.two {
