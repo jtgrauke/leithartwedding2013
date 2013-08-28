@@ -59,7 +59,6 @@ function loadInstagrams() {
         }
     });
 
-    event.preventDefault();
 }
 
 // Function to toggle between two by two or three by three
